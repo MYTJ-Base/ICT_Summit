@@ -114,7 +114,7 @@ Full team agreement (IP, prize split, origin of project) is signed separately.
 ---
 
 ## 10. Repository structure (suggested)
-
+```text
 /
 ├── docs/
 │   ├── war_room_dossier.pdf
@@ -132,7 +132,7 @@ Full team agreement (IP, prize split, origin of project) is signed separately.
 │   ├── script_v3.md
 │   └── qna_prep.md
 └── README.md
-
+```
 ---
 
 **Start here. Build together. Win July.**
