@@ -1,4 +1,4 @@
-# KnowMe (To be confirmed) — Knowledge Base + Cognitive Dynamics System
+# KnowMe — Knowledge Base + Cognitive Dynamics System
 
 > *A tool that makes a student’s own knowledge visible, then helps them think — not just memorize.*
 
