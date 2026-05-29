@@ -1,4 +1,5 @@
 # KnowMe — Knowledge Base + Cognitive Dynamics System
+# Knowledge Mirror — Knowledge Base + Cognitive Dynamics System
 
 > *A tool that makes a student’s own knowledge visible, then helps them think — not just memorize.*
 
@@ -39,7 +40,33 @@ We are building this for the **ICT for Africa Tech Innovation Challenge 2026** (
 
 ---
 
-## 4. What we build for the competition (the demo)
+## 4. Repository Architecture (New)
+
+This repository is organized by domain and responsibility to support the 8-week sprint:
+
+```text
+/
+├── assets/                 # Branding, media, and demo insurance
+├── docs/                   # The "War Room" - Strategic & Architectural core
+│   ├── architecture/       # Technical deep-dives (CDS 8-axis, KB Graph)
+│   ├── strategy/           # Competition positioning, SWOT, business model
+│   └── team/               # Collaboration agreements, roles, IP docs
+├── experiments/            # Vision-level prototypes (non-demo features)
+├── pitch/                  # The "Performance" layer (scripts, Q&A, slides)
+├── src/                    # The "Engine" (Logic & Backend)
+│   ├── ai/                 # AI Mirror & RAG logic (student-only context)
+│   ├── cds/                # Cognitive Dynamics (state calculation)
+│   └── kb/                 # Knowledge Base (parsing, mastery, graph logic)
+├── survey/                 # Research & Market Validation (data & analysis)
+├── tests/                  # Verification & Validation
+├── web/                    # The "Interface" (Visual layer & Graph Viz)
+├── scripts/                # Automation (setup, data processing)
+└── README.md               # Project Entry Point
+```
+
+---
+
+## 5. What we build for the competition (the demo)
 
 One complete, working flow – **four steps**:
 
@@ -52,7 +79,7 @@ One complete, working flow – **four steps**:
 
 ---
 
-## 5. Team & roles
+## 6. Team & roles
 
 | Role | Lead | Responsibility |
 |------|------|----------------|
@@ -64,7 +91,7 @@ One complete, working flow – **four steps**:
 
 ---
 
-## 6. 8‑week execution calendar (simplified)
+## 7. 8‑week execution calendar (simplified)
 
 | Week | Focus | Deliverable |
 |------|-------|--------------|
@@ -79,7 +106,7 @@ One complete, working flow – **four steps**:
 
 ---
 
-## 7. What we walk in with
+## 8. What we walk in with
 
 - Working demo (tested on presentation device)
 - Backup recording of the demo
@@ -92,7 +119,7 @@ One complete, working flow – **four steps**:
 
 ---
 
-## 8. Beyond the competition
+## 9. Beyond the competition
 
 This is not a one‑off. The same project is aligned for:
 
@@ -102,7 +129,7 @@ This is not a one‑off. The same project is aligned for:
 
 ---
 
-## 9. Collaboration rules (short version)
+## 10. Collaboration rules (short version)
 
 - Domain lead is **accountable** for their deliverable.
 - Blockers communicated **same day**.
@@ -113,28 +140,6 @@ Full team agreement (IP, prize split, origin of project) is signed separately.
 
 ---
 
-## 10. Repository structure (suggested)
-```text
-/
-├── docs/
-│   ├── war_room_dossier.pdf
-│   ├── team_briefing_v2.pdf
-│   └── CDS_architecture.md
-├── demo/
-│   ├── cds_entry.py (or .html)
-│   ├── kb_note_creator.py
-│   ├── ai_mirror.py
-│   └── graph_viz.py
-├── survey/
-│   ├── questions.md
-│   └── results_summary.md
-├── pitch/
-│   ├── script_v3.md
-│   └── qna_prep.md
-└── README.md
-```
----
+**Three Minds One Goal!**
 
-**Start here. Build together. Win July.**
-
-— Yves · Seth · Gadyel
+SYNK
