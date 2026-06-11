@@ -1,4 +1,4 @@
-# KnowMe — Knowledge Base + Cognitive Dynamics System
+# KnowMe — Knowledge Base + Cognitive Diagnostics System
 
 > *A tool that makes a student’s own knowledge visible, then helps them think — not just memorize.*
 
@@ -12,7 +12,7 @@ We do the opposite: **pull the student’s own knowledge out**, structure it, an
 Two core systems:
 
 - **Knowledge Base (KB)** – a personal, typed knowledge graph built from the student’s own words.
-- **Cognitive Dynamics System (CDS)** – a model that recommends *how* to study based on sleep, fatigue, and cognitive state.
+- **Cognitive Diagnostics System (CDS)** – a model that recommends *how* to study based on sleep, fatigue, and cognitive state.
 
 We are building this for the **ICT for Africa Tech Innovation Challenge 2026** (July/August).
 
