@@ -5,7 +5,7 @@ This directory owns the "Source of Truth" for the project's logic. It handles da
 
 ### Sub-Modules
 - `ai/`: Logic for the AI Mirror. Handles prompt engineering and grounding.
-- `cds/`: The mathematical implementation of the Cognitive Dynamics System.
+- `cds/`: The mathematical implementation of the Cognitive Diagnostic System.
 - `kb/`: Logic for parsing, structuring, and connecting student knowledge notes.
 
 ### Standards
