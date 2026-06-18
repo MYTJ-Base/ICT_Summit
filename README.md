@@ -54,7 +54,7 @@ This repository is organized by domain and responsibility to support the 8-week 
 ├── pitch/                  # The "Performance" layer (scripts, Q&A, slides)
 ├── src/                    # The "Engine" (Logic & Backend)
 │   ├── ai/                 # AI Mirror & RAG logic (student-only context)
-│   ├── cds/                # Cognitive Dynamics (state calculation)
+│   ├── cds/                # Cognitive Diagnostics (state calculation)
 │   └── kb/                 # Knowledge Base (parsing, mastery, graph logic)
 ├── survey/                 # Research & Market Validation (data & analysis)
 ├── tests/                  # Verification & Validation

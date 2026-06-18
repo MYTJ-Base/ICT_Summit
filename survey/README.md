@@ -1,7 +1,7 @@
 # Research & Survey
 
 ### Responsibility
-Proof of the problem. This folder stores the evidence that makes the "Knowledge Mirror" an urgent necessity.
+Proof of the problem. This folder stores the evidence that makes the KnowMe an urgent necessity.
 
 ### Sub-Directories
 - `data/`: Anonymized raw results from the 96-student survey.
