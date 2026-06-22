@@ -320,7 +320,10 @@ def compute_proximity_scores(axis_scores, session_history):
     # Extract personal best for each axis
     personal_bests = {"N": 0.0, "C": 0.0, "M": 0.0, "E": 0.0, "S": 0.0}
     for session in session_history:
-        snapshot = session.get("axis_scores_snapshot", {})
+        try:
+            snapshot = session["axis_scores_snapshot"]
+        except Exception:
+            snapshot = "{}"
         if isinstance(snapshot, str):
             try:
                 snapshot = json.loads(snapshot)

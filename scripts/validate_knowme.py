@@ -8,13 +8,19 @@ def run_validation():
     print("      KNOWME SYSTEM DEMO FLOW VALIDATOR             ")
     print("====================================================")
     
+    # Set up a temporary test database so we don't pollute the main one
+    import tempfile
+    test_db_path = tempfile.mktemp(suffix=".db", prefix="knowme_val_")
+    env = os.environ.copy()
+    env["KNOWME_TEST_DB"] = test_db_path
+
     # 1. Start FastAPI server using uvicorn in background
     print("\n[Step 1] Booting up FastAPI/Uvicorn server...")
     server_process = subprocess.Popen(
         ["uv", "run", "uvicorn", "src.main:app", "--host", "127.0.0.1", "--port", "8085"],
         stdout=subprocess.PIPE,
         stderr=subprocess.PIPE,
-        env=os.environ
+        env=env
     )
     
     # Wait for server to boot
@@ -35,13 +41,13 @@ def run_validation():
         print("Installing httpx for validation script...")
         subprocess.check_call([sys.executable, "-m", "pip", "install", "httpx"])
         import httpx
-        
-    client = httpx.Client(base_url="http://127.0.0.1:8085")
+    client = httpx.Client(base_url="http://127.0.0.1:8085", timeout=60.0)
     
     try:
-        # 2. Register user
-        print("\n[Step 2] Registering user 'Songue'...")
-        res = client.post("/auth/register", json={"display_name": "Songue"})
+        import uuid
+        test_username = f"Songue_{uuid.uuid4().hex[:6]}"
+        print(f"\n[Step 2] Registering user '{test_username}'...")
+        res = client.post("/auth/register", json={"display_name": test_username})
         res.raise_for_status()
         user = res.json()
         user_id = user["user_id"]
@@ -198,10 +204,14 @@ def run_validation():
         print(f"❌ Error during validation: {str(e)}")
         raise e
     finally:
-        # Stop background uvicorn server
-        print("\nStopping uvicorn server process...")
-        server_process.terminate()
-        server_process.wait()
+        if 'server_process' in locals() and server_process.poll() is None:
+            print("\nStopping uvicorn server process...")
+            server_process.terminate()
+            server_process.wait()
+        
+        if 'test_db_path' in locals() and os.path.exists(test_db_path):
+            os.remove(test_db_path)
+            
         print("👋 Validation process finished.")
 
 if __name__ == "__main__":

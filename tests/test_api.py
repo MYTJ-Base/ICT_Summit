@@ -3,9 +3,9 @@ import json
 import pytest
 from fastapi.testclient import TestClient
 
-# Set test database path before importing the app
+TEST_DB = "knowme_test_api.db"
+os.environ["KNOWME_TEST_DB"] = TEST_DB
 import src.database
-src.database.DB_PATH = "knowme_test.db"
 
 from src.main import app
 from src.database import init_db, get_db_connection
@@ -15,15 +15,19 @@ client = TestClient(app)
 @pytest.fixture(autouse=True)
 def run_around_tests():
     # Setup: Initialize test database
-    if os.path.exists("knowme_test.db"):
-        os.remove("knowme_test.db")
+    if os.path.exists(TEST_DB):
+        os.remove(TEST_DB)
     init_db()
     
     yield
     
-    # Teardown: Clean up database file
-    if os.path.exists("knowme_test.db"):
-        os.remove("knowme_test.db")
+    # Teardown
+    if os.path.exists(TEST_DB):
+        try:
+            os.remove(TEST_DB)
+        except Exception:
+            pass
+
 
 def test_auth_register_and_login():
     # Register
